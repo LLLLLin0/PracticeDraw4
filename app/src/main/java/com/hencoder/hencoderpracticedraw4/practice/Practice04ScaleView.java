@@ -38,7 +38,15 @@ public class Practice04ScaleView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        canvas.save();
+        canvas.scale(2, 2, point1.x + bitmap.getWidth(), point1.y + bitmap.getHeight());
         canvas.drawBitmap(bitmap, point1.x, point1.y, paint);
+        canvas.restore();
+
+        canvas.save();
+        canvas.scale(0.5f, 2.5f, point2.x, point2.y + bitmap.getHeight());
         canvas.drawBitmap(bitmap, point2.x, point2.y, paint);
+        canvas.restore();
+
     }
 }
